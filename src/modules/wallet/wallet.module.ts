@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DB_CONNECTION } from '@src/constant';
 import { WalletController } from './controllers/wallet.controller';
 import { WalletAdminController } from './controllers/wallet.admin.controller';
-import {  WalletEntity } from './entity/wallet.entity';
+import { WalletEntity } from './entity/wallet.entity';
 import { WalletService } from './wallet.service';
 import { TransactionEntity } from './entity/transactions.entity';
 

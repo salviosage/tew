@@ -2,7 +2,7 @@ export enum CURRENCY_ENUM {
   USD = 'USD',
   EUR = 'EUR',
   USDT = 'USDT',
-  RWF = 'RWF'
+  RWF = 'RWF',
 }
 export enum WALLET_STATUS_ENUM {
   ACTIVE = 'ACTIVE',
@@ -32,11 +32,8 @@ export const walletSelectfields = [
   'status',
   'isDeleted',
   'id',
-]
-export const walletRelations = [
-  'transactions',
-  'user'
-]
+];
+export const walletRelations = ['transactions', 'user'];
 
 export const transactionSelectfields = [
   'action',
@@ -48,8 +45,5 @@ export const transactionSelectfields = [
   'reference',
   'transactionDate',
   'id',
-]
-export const transactionRelations = [
-  'wallet',
-  'user'
-]
+];
+export const transactionRelations = ['wallet', 'user'];

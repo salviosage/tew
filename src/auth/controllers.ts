@@ -13,10 +13,7 @@ import { AuthenticationService } from '@src/auth/services';
 import { LocalAuthGuard } from './guards/local-auth.guard';
 import { JWTAuthGuard } from './guards/jwt-auth.guard';
 import { CurrentUser } from './decorators';
-import {
-  CheckUserDto,
-  SignupDTO,
-} from './dtos';
+import { CheckUserDto, SignupDTO } from './dtos';
 import { Response } from 'express';
 import { UserEntity } from '@src/modules/user/entity/user.entity';
 import { ResponseService } from '@src/shared/services/response.service';
@@ -67,8 +64,6 @@ export class AuthenticationController {
       me,
     );
   }
-
-  
 
   @Get('/check-user')
   async checkUser(@Res() res: Response, @Body() payload: CheckUserDto) {

@@ -21,8 +21,7 @@ export class CreateUserDTO extends PickType(UserEntity, [
   'password',
   'country',
   'gender',
-]) {
-}
+]) {}
 
 export class ValidateUserDTO {
   @IsString()
@@ -42,8 +41,6 @@ export class ValidateUserDTO {
   strategy: string;
 }
 
-
-
 export class CheckUserDto {
   @IsEmail()
   @IsOptional()
@@ -52,6 +49,3 @@ export class CheckUserDto {
 }
 
 export type IAuthorizeUser = UserEntity & { token: string };
-
-
-

@@ -5,5 +5,5 @@ export const TRANSACTIONS = 'transactions';
 export enum TABLE_NAMES {
   USERS,
   TRANSACTIONS,
-  WALLET
+  WALLET,
 }

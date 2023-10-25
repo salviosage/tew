@@ -5,16 +5,8 @@ import { PaginationService } from './services/pagination.service';
 
 @Module({
   imports: [],
-  providers: [
-    PaginationService,
-    UtilityService,
-    ResponseService,
-  ],
+  providers: [PaginationService, UtilityService, ResponseService],
   controllers: [],
-  exports: [
-    PaginationService,
-    UtilityService,
-    ResponseService,
-  ],
+  exports: [PaginationService, UtilityService, ResponseService],
 })
 export class SharedModule {}

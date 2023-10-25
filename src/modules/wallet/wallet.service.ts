@@ -16,7 +16,13 @@ import { UserEntity } from '../user/entity/user.entity';
 import { UtilityService } from '@src/shared/util';
 import * as moment from 'moment';
 import { TransactionEntity } from './entity/transactions.entity';
-import { TRANSACTION_STATUS_ENUM, transactionRelations, transactionSelectfields, walletRelations, walletSelectfields } from './wallet.interfaces';
+import {
+  TRANSACTION_STATUS_ENUM,
+  transactionRelations,
+  transactionSelectfields,
+  walletRelations,
+  walletSelectfields,
+} from './wallet.interfaces';
 const transactionCharge = 0.025;
 @Injectable()
 export class WalletService {
@@ -37,13 +43,14 @@ export class WalletService {
     logger?: Logger,
   ): Promise<any> {
     logger.info(`finding wallets ${criteria}`);
-    const { select, relations } = await this.utilityService.checkFiltersAndRelations(
-      populate,
-      walletRelations,
-      filter,
-      walletSelectfields,
-      logger,
-    );
+    const { select, relations } =
+      await this.utilityService.checkFiltersAndRelations(
+        populate,
+        walletRelations,
+        filter,
+        walletSelectfields,
+        logger,
+      );
     const { page, limit, all } = paginate;
 
     return await this.paginationService.paginate<WalletEntity>(
@@ -66,13 +73,14 @@ export class WalletService {
     logger?: Logger,
   ): Promise<any> {
     logger.info(`finding transactions ${criteria}`);
-    const { select, relations } = await this.utilityService.checkFiltersAndRelations(
-      populate,
-      transactionRelations,
-      filter,
-      transactionSelectfields,
-      logger,
-    );
+    const { select, relations } =
+      await this.utilityService.checkFiltersAndRelations(
+        populate,
+        transactionRelations,
+        filter,
+        transactionSelectfields,
+        logger,
+      );
     const { page, limit, all } = paginate;
 
     return await this.paginationService.paginate<TransactionEntity>(
@@ -86,7 +94,6 @@ export class WalletService {
       select,
     );
   }
-
 
   async count(criteria?: FindOptionsWhere<WalletEntity>): Promise<number> {
     return this.walletRepository.count({
@@ -102,19 +109,23 @@ export class WalletService {
   ): Promise<WalletEntity> {
     logger.info(`creating wallet ${payload}`);
 
-    const name  = payload.name.trim().toLocaleLowerCase();
-      const walletExist = await this.count({ name, isDeleted: false, userId: user.id }); 
-  
+    const name = payload.name.trim().toLocaleLowerCase();
+    const walletExist = await this.count({
+      name,
+      isDeleted: false,
+      userId: user.id,
+    });
 
     if (walletExist) {
       throw new BadRequestException('You already have wallet with same name');
     }
-   
-    const wallet = this.walletRepository.create({ ...payload,
+
+    const wallet = this.walletRepository.create({
+      ...payload,
       userId: user.id,
-      name});
+      name,
+    });
     return await this.walletRepository.save(wallet);
-  
   }
 
   async createWalletTransaction(
@@ -123,12 +134,19 @@ export class WalletService {
     logger: Logger,
   ): Promise<TransactionEntity> {
     logger.info(`creating wallet transaction  ${payload}`);
-    const wallet = await this.findOneWallet({ id: payload.walletId, isDeleted: false, userId: user.id });
+    const wallet = await this.findOneWallet({
+      id: payload.walletId,
+      isDeleted: false,
+      userId: user.id,
+    });
     if (!wallet) {
       throw new BadRequestException('Wallet not found');
     }
     // check if available balance is enough
-    if (wallet.availableBalance < (payload.amount * transactionCharge) && payload.action === 'DEBIT') {
+    if (
+      wallet.availableBalance < payload.amount * transactionCharge &&
+      payload.action === 'DEBIT'
+    ) {
       throw new BadRequestException('Insufficient funds');
     }
     const transaction = {
@@ -137,9 +155,12 @@ export class WalletService {
       walletId: wallet.id,
       status: TRANSACTION_STATUS_ENUM.COMPLETED,
       walletStateBefore: wallet.availableBalance,
-      walletStateAfter: payload.action === 'DEBIT' ? wallet.availableBalance - payload.amount : wallet.availableBalance + payload.amount,
+      walletStateAfter:
+        payload.action === 'DEBIT'
+          ? wallet.availableBalance - payload.amount
+          : wallet.availableBalance + payload.amount,
       reference: await this.utilityService.generateRandomString(10),
-      transactionDate: moment().toDate()
+      transactionDate: moment().toDate(),
     };
     const response = await this.transactionRepository.save(transaction);
 
@@ -147,10 +168,8 @@ export class WalletService {
     wallet.availableBalance = transaction.walletStateAfter;
     await this.walletRepository.save(wallet);
 
-return response;
+    return response;
   }
-
-
 
   async findOneWallet(
     criteria: FindOptionsWhere<WalletEntity>,
@@ -158,7 +177,7 @@ return response;
     return this.walletRepository.findOne({
       where: {
         ...criteria,
-      }
+      },
     });
   }
 
@@ -168,8 +187,7 @@ return response;
     return this.transactionRepository.findOne({
       where: {
         ...criteria,
-      }
+      },
     });
   }
-
 }

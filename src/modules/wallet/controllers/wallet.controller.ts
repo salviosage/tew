@@ -19,7 +19,7 @@ import {
   CreateWalletDTO,
   CreateWalletTransactionDTO,
   FindAllTransactionDTO,
-  FindAllWalletDTO
+  FindAllWalletDTO,
 } from '../dtos';
 import { WalletService } from '../wallet.service';
 import { UserEntity } from '@src/modules/user/entity/user.entity';
@@ -143,7 +143,6 @@ export class WalletController {
       return this.responseService.json(res, err);
     }
   }
-  
 
   @Get('/:id')
   async getOneWallet(
@@ -152,8 +151,16 @@ export class WalletController {
     @CurrentUser() user: UserEntity,
   ) {
     try {
-      const data = await this.walletService.findOneWallet({userId:user.id, id});
-      return this.responseService.json(res, STATUS_CODE_ENUM.OK, 'wallet fetched successfully', data);
+      const data = await this.walletService.findOneWallet({
+        userId: user.id,
+        id,
+      });
+      return this.responseService.json(
+        res,
+        STATUS_CODE_ENUM.OK,
+        'wallet fetched successfully',
+        data,
+      );
     } catch (err) {
       this.logger.error(`${err.message}`);
       return this.responseService.json(res, err);
@@ -166,8 +173,16 @@ export class WalletController {
     @CurrentUser() user: UserEntity,
   ) {
     try {
-      const data = await this.walletService.findOneWalletTransaction({userId:user.id, id});
-      return this.responseService.json(res, STATUS_CODE_ENUM.OK, 'transaction fetched successfully', data);
+      const data = await this.walletService.findOneWalletTransaction({
+        userId: user.id,
+        id,
+      });
+      return this.responseService.json(
+        res,
+        STATUS_CODE_ENUM.OK,
+        'transaction fetched successfully',
+        data,
+      );
     } catch (err) {
       this.logger.error(`${err.message}`);
       return this.responseService.json(res, err);

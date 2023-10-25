@@ -1,6 +1,13 @@
 // Package imports
 import { IsIn, IsNumber, IsOptional, IsString, IsUUID } from 'class-validator';
-import { Entity, Column, ManyToOne, JoinColumn, Index, OneToMany } from 'typeorm';
+import {
+  Entity,
+  Column,
+  ManyToOne,
+  JoinColumn,
+  Index,
+  OneToMany,
+} from 'typeorm';
 import { WALLET } from '@src/constant/tables';
 import { BaseEntity } from '@src/database/abstract';
 import { UserEntity } from '@src/modules/user/entity/user.entity';
@@ -9,15 +16,14 @@ import { TransactionEntity } from './transactions.entity';
 
 @Entity(WALLET)
 export class WalletEntity extends BaseEntity {
-
   @IsString()
   @Index()
   @Column('text', { nullable: false })
   name: string;
-  
+
   @IsIn(Object.values(CURRENCY_ENUM))
   @Index()
-  @Column({ length: 50, nullable: false , default: CURRENCY_ENUM.RWF})
+  @Column({ length: 50, nullable: false, default: CURRENCY_ENUM.RWF })
   currency: CURRENCY_ENUM;
 
   @IsNumber()

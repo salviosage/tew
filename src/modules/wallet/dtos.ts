@@ -1,8 +1,4 @@
-import {
-  IntersectionType,
-  PartialType,
-  PickType,
-} from '@nestjs/swagger';
+import { IntersectionType, PartialType, PickType } from '@nestjs/swagger';
 import { WalletEntity } from '@src/modules/wallet/entity/wallet.entity';
 import { PaginateDTO } from '@src/shared/types';
 import { IsOptional } from 'class-validator';
@@ -10,18 +6,15 @@ import { TransactionEntity } from './entity/transactions.entity';
 
 export class CreateWalletDTO extends PickType(WalletEntity, [
   'currency',
-  'name'
-]) {
-}
+  'name',
+]) {}
 
 export class CreateWalletTransactionDTO extends PickType(TransactionEntity, [
   'action',
   'amount',
   'description',
   'walletId',
-]) {
-}
-
+]) {}
 
 class SearchWalletDTO extends PickType(WalletEntity, [
   'userId',
@@ -34,7 +27,7 @@ class SearchTransactionDTO extends PickType(TransactionEntity, [
   'amount',
   'reference',
   'walletId',
-  'userId'
+  'userId',
 ]) {}
 
 export class FindAllWalletDTO extends IntersectionType(
@@ -43,7 +36,7 @@ export class FindAllWalletDTO extends IntersectionType(
 ) {
   @IsOptional()
   relations?: string;
-  
+
   @IsOptional()
   select?: string;
 }
@@ -54,7 +47,7 @@ export class FindAllTransactionDTO extends IntersectionType(
 ) {
   @IsOptional()
   relations?: string;
-  
+
   @IsOptional()
   select?: string;
 }

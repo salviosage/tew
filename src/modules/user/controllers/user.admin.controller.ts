@@ -76,5 +76,4 @@ export class UserAdminController {
       return this.responseService.json(res, err);
     }
   }
-
 }

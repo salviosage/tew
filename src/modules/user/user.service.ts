@@ -11,14 +11,13 @@ import { PaginationService } from '@src/shared/services/pagination.service';
 import { PaginateDTO } from '@src/shared/types';
 import { UtilityService } from '@src/shared/util';
 
-
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(UserEntity, DB_CONNECTION)
     private userRepository: Repository<UserEntity>,
     private paginationService: PaginationService,
-    private utilityService: UtilityService
+    private utilityService: UtilityService,
   ) {}
 
   async findAll(
@@ -30,13 +29,14 @@ export class UserService {
     logger?: Logger,
   ): Promise<any> {
     logger.info(`fetching users ${criteria}`);
-    const { select, relations } = await this.utilityService.checkFiltersAndRelations(
-      populate,
-      userRelations,
-      filter,
-      userSelectfields,
-      logger,
-    );
+    const { select, relations } =
+      await this.utilityService.checkFiltersAndRelations(
+        populate,
+        userRelations,
+        filter,
+        userSelectfields,
+        logger,
+      );
     const { page, limit, all } = paginate;
     return await this.paginationService.paginate<UserEntity>(
       this.userRepository,
@@ -54,7 +54,6 @@ export class UserService {
     return await this.userRepository.save(user);
   }
 
-
   async checkEmail(email: string): Promise<boolean> {
     return (await this.userRepository.count({ where: { email } })) > 0;
   }
@@ -64,9 +63,7 @@ export class UserService {
   ): Promise<UserEntity> {
     logger.info(`creating user ${payload}`);
     const email = payload.email?.trim().toLocaleLowerCase();
-    const [emailExist] = await Promise.all([
-      this.checkEmail(email)
-    ]);
+    const [emailExist] = await Promise.all([this.checkEmail(email)]);
     if (emailExist) {
       throw new BadRequestException('email already exist');
     }
@@ -90,12 +87,10 @@ export class UserService {
           .createQueryBuilder('users')
           .update()
           .set({ ...user, email, password: pwd, isActive: true });
-        const [emailExist] = await Promise.all([
-          this.checkEmail(email)
-        ]);
-       
-          if (emailExist) {
-            updateQuery.where('users.email = :email', { email });
+        const [emailExist] = await Promise.all([this.checkEmail(email)]);
+
+        if (emailExist) {
+          updateQuery.where('users.email = :email', { email });
           await updateQuery.execute();
         } else {
           await this.userRepository.save({

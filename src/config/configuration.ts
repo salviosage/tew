@@ -41,7 +41,6 @@ export interface Configuration {
     secret: string;
     expiresIn: string | number;
   };
-
 }
 
 export default (): Configuration => ({
@@ -90,6 +89,4 @@ export default (): Configuration => ({
   cronEnabled(): boolean {
     return process.env.ENABLED_CRON === 'true';
   },
- 
-
 });

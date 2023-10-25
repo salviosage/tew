@@ -1,6 +1,6 @@
 import { Repository, SelectQueryBuilder } from 'typeorm';
 import { isEmpty } from 'lodash';
-import { } from '@nestjs/swagger';
+import {} from '@nestjs/swagger';
 
 export class PaginationService {
   async paginate<T>(
@@ -63,7 +63,7 @@ export class PaginationService {
         queryBuilder.leftJoinAndSelect(`entity.${relation}`, relation);
       });
     }
-    
+
     result = await queryBuilder.getMany();
 
     return {
@@ -87,21 +87,15 @@ export class PaginationService {
 }
 
 export class PaginationMetaData {
-
   page: number;
-
 
   perPage: number;
 
-
   total: number;
-
 
   previousPage: number;
 
-
   nextPage: number;
-
 
   pageCount: number;
 }

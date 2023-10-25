@@ -25,15 +25,12 @@ export class WalletAdminController {
   @Roles(ENUM_ROLE_TYPE.ADMIN, ENUM_ROLE_TYPE.SUPER_ADMIN)
   @UseGuards(JWTAuthGuard, RolesGuard)
   @Get('/')
-  async listWallets(
-    @Res() res: Response,
-    @Query() params: FindAllWalletDTO,
-  ) {
+  async listWallets(@Res() res: Response, @Query() params: FindAllWalletDTO) {
     try {
       const { page, limit, all, select, relations, ...search } = params;
       const s = select?.split(',').filter((item) => item.length > 0);
       const r = relations?.split(',').filter((item) => item.length > 0);
-      console.log(r)
+      console.log(r);
       const payload = await this.walletService.findAllWallets(
         { page, limit, all },
         search,

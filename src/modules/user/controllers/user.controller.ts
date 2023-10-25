@@ -1,7 +1,4 @@
-import {
-  Controller,
-  Inject,
-} from '@nestjs/common';
+import { Controller, Inject } from '@nestjs/common';
 import { Logger } from 'winston';
 import { UserService } from '../user.service';
 import { ResponseService } from '@src/shared/services/response.service';
@@ -19,5 +16,4 @@ export class UserController {
       context: { service: 'UserController', module: 'User' },
     });
   }
-
 }

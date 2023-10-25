@@ -4,11 +4,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { JWT_STRATEGY, LOCAL_STRATEGY } from '@src/constant';
-import {
-  CheckUserDto,
-  SignupDTO,
-  ValidateUserDTO,
-} from './dtos';
+import { CheckUserDto, SignupDTO, ValidateUserDTO } from './dtos';
 import { UserService } from '@src/modules/user/user.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
@@ -21,7 +17,7 @@ export class AuthenticationService {
   constructor(
     private readonly jwtService: JwtService,
     private readonly userService: UserService,
-  ) { }
+  ) {}
 
   me(user: UserEntity) {
     // exlude sesntive data
@@ -112,5 +108,4 @@ export class AuthenticationService {
       userExist: emailExists,
     };
   }
-
 }

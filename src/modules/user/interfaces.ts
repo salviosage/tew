@@ -1,5 +1,3 @@
-
-
 export enum GENDER_ENUM {
   MALE = 'MALE',
   FEMALE = 'FEMALE',
@@ -28,9 +26,6 @@ export const userSelectfields = [
   'gender',
   'lastLoggedIn',
   'id',
-]
+];
 
-export const userRelations = [
-  "transactions",
-  "wallets"
-]
+export const userRelations = ['transactions', 'wallets'];
