@@ -33,6 +33,7 @@ export class WalletAdminController {
       const { page, limit, all, select, relations, ...search } = params;
       const s = select?.split(',').filter((item) => item.length > 0);
       const r = relations?.split(',').filter((item) => item.length > 0);
+      console.log(r)
       const payload = await this.walletService.findAllWallets(
         { page, limit, all },
         search,

@@ -26,7 +26,6 @@ export const userSelectfields = [
   'createdAt',
   'updatedAt',
   'gender',
-  'isEmailVerified',
   'lastLoggedIn',
   'id',
 ]

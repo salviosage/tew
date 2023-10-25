@@ -106,7 +106,7 @@ export class WalletService {
       const walletExist = await this.count({ name, isDeleted: false, userId: user.id }); 
   
 
-    if (!walletExist) {
+    if (walletExist) {
       throw new BadRequestException('You already have wallet with same name');
     }
    

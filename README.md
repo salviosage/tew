@@ -39,6 +39,8 @@
 * norma user can view their wallets and transactions 
 * admin can view users wallets and transactions 
 * there is no database transactions 
+* This project use nest frameword and typescript , it use postgres DB as a database and you will need to have postgress db configured in ur system to be able to run the project 
+
 
   
 
@@ -59,7 +61,7 @@
 
   
 
-Documentation of ack-nestjs-boilerplate in [/docs][documentation]
+Documentation of tekana e wallet is postman collection in root of this project file name `Tekana E Wallet.postman_collection.json`
 
   
 
@@ -76,12 +78,13 @@ How to contribute in this repo
 1. clone this repo .
 ```bash
 
-git clone "url you just copied"
+git clone git@github.com:salviosage/tew.git
 
 ```
 
 2. open repo codebase 
-3. create env file and copy the env example to env 
+3. create env file and copy the env example to env and replace necessary env valiable with your local data like database connection variables   
+
 
 
 ```bash
@@ -104,7 +107,7 @@ yarn install
 
   
 
-5. start the project 
+5. start the project  PS please make sure you are all set with env valiables and db 
 
   
 
@@ -116,6 +119,8 @@ yarn run start:dev
 
 
 6. open your postman and use documentation to navigate trough the project and consume endpoints 
+
+The postman collection is in root of the project file name `Tekana E Wallet.postman_collection.json`
 
  
 ## Strategy

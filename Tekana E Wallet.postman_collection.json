@@ -1,0 +1,2435 @@
+{
+	"info": {
+		"_postman_id": "5f588188-3ebb-433a-a847-2042a17e8880",
+		"name": "Tekana E Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5706564"
+	},
+	"item": [
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "hello",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-timestamp",
+								"value": "{{xTimestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{xApiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-custom-lang",
+								"value": "en,id",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/hello",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+							],
+							"path": [
+								"hello"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "hello",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									},
+									{
+										"key": "x-custom-lang",
+										"value": "en,id",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/hello",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"hello"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-1xXqqGprVnrkk2c4eVAq8gaNB/A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 14:08:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"TEW API running\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health check",
+			"item": [
+				{
+					"name": "database",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-timestamp",
+								"value": "{{xTimestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{xApiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/database",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}public"
+							],
+							"path": [
+								"health",
+								"database"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "database",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/database",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}public"
+									],
+									"path": [
+										"health",
+										"database"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-WyDKplsESAJLhg1Ebz50FEvycXE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 19:01:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successfully database health check\",\n    \"data\": {\n        \"status\": \"ok\",\n        \"info\": {\n            \"albums-database\": {\n                \"status\": \"up\"\n            }\n        },\n        \"error\": {},\n        \"details\": {\n            \"albums-database\": {\n                \"status\": \"up\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "memory heap",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-timestamp",
+								"value": "{{xTimestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{xApiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/memory-heap",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}public"
+							],
+							"path": [
+								"health",
+								"memory-heap"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "memory heap",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/memory-heap",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}public"
+									],
+									"path": [
+										"health",
+										"memory-heap"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "164"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a4-EaUFf11p6sFoORTlKQvu7IsVlA4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 19:02:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successfully memory heap health check\",\n    \"data\": {\n        \"status\": \"ok\",\n        \"info\": {\n            \"memoryHeap\": {\n                \"status\": \"up\"\n            }\n        },\n        \"error\": {},\n        \"details\": {\n            \"memoryHeap\": {\n                \"status\": \"up\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "memory rss",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-timestamp",
+								"value": "{{xTimestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{xApiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/memory-rss",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}public"
+							],
+							"path": [
+								"health",
+								"memory-rss"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "memory rss",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/memory-rss",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}public"
+									],
+									"path": [
+										"health",
+										"memory-rss"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1-z3sfQVNjgFOSCfUDv+ALGnMUKzo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 19:02:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successfully memory rss health check\",\n    \"data\": {\n        \"status\": \"ok\",\n        \"info\": {\n            \"memoryRss\": {\n                \"status\": \"up\"\n            }\n        },\n        \"error\": {},\n        \"details\": {\n            \"memoryRss\": {\n                \"status\": \"up\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "storage",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-timestamp",
+								"value": "{{xTimestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{xApiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/storage",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}public"
+							],
+							"path": [
+								"health",
+								"storage"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "storage",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}public/health/storage",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}public"
+									],
+									"path": [
+										"health",
+										"storage"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a0-Q8PJ1orypKAs6KLWIFSkVBc6sec\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Aug 2023 19:02:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"successfully storage health check\",\n    \"data\": {\n        \"status\": \"ok\",\n        \"info\": {\n            \"diskHealth\": {\n                \"status\": \"up\"\n            }\n        },\n        \"error\": {},\n        \"details\": {\n            \"diskHealth\": {\n                \"status\": \"up\"\n            }\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-timestamp",
+								"value": "{{xTimestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{xApiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@rssb.rw\",\r\n    \"password\": \"Wsdwe@445545\",\r\n    \"firstName\": \"User1\",\r\n    \"lastName\": \"Test\",\r\n    \"country\": \"Rwanda\",\r\n    \"gender\": \"MALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/signup",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sigup email exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"email\": \"admin.seed@test.com\",\r\n\"password\": \"JhonDoe@Password1\",\r\n\"firstName\": \"Jhon\",\r\n\"lastName\": \"Doe\",\r\n\"username\":\"admin\",\r\n\"ageRange\":\"25-34\",\r\n\"country\":\"Rwanda\",\r\n\"postcode\":\"000000\",\r\n\"gender\":\"MALE\"\r\n\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/signup",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"73-8fKa04o3qubkJu+GrXoMvXfPEfw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:02:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"email already exists\",\n    \"timestamp\": \"2023-08-23T12:02:28.064Z\",\n    \"path\": \"/api/V1/auth/signup\"\n}"
+						},
+						{
+							"name": "signup validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n\"gender\":\"MALE\"\r\n\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/signup",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "385"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"181-J+4F72Ayir0f8YhF5vSaSdGF2os\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:05:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": [\n        \"email must be a string\",\n        \"email should not be empty\",\n        \"firstName must be a string\",\n        \"firstName should not be empty\",\n        \"lastName must be a string\",\n        \"lastName should not be empty\",\n        \"password must be a string\",\n        \"password should not be empty\"\n    ],\n    \"timestamp\": \"2023-08-23T12:05:47.363Z\",\n    \"path\": \"/api/V1/auth/signup\"\n}"
+						},
+						{
+							"name": "signup success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@rssb.rw\",\r\n    \"password\": \"Wsdwe@445545\",\r\n    \"firstName\": \"User1\",\r\n    \"lastName\": \"Test\",\r\n    \"country\": \"Rwanda\",\r\n    \"gender\": \"MALE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/signup",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-S8MlMFhB4TQG8ylv2ot2BYDVcRE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 12:08:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully user created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson = pm.response.json();",
+									"const responseStatus = pm.response.code;",
+									"",
+									"if (responseStatus === 200) {",
+									"    pm.environment.set(\"AccessToken\", responseJson.data.token);",
+									"    pm.collectionVariables.set(\"AccessToken\", responseJson.data.token);",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-timestamp",
+								"value": "{{xTimestamp}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{xApiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"super.seed@tew.com\",\n    \"password\":\"aaAA@@password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/login",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-timestamp",
+										"value": "{{xTimestamp}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{xApiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"super.seed@tew.com\",\n    \"password\":\"aaAA@@password123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/login",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "243"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f3-3WpAj4Pa10dqm/Emz0I/uOMXcDQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 25 Oct 2023 21:52:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged in successfully\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWRjNTJiLWMzOWYtNGI5MS04YmVkLWFiNmNiMjQzODIxMyIsImlhdCI6MTY5ODI3MDc2MiwiZXhwIjoxNjk4MzU3MTYyfQ.qGvjGhFeYb7sQLlEZqbVkesBV9gYOeo9Mdr0VSWkQ_w\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Check User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user.seed@test.com\",\n    \"username\":\"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/check-user",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+							],
+							"path": [
+								"auth",
+								"check-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "check email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/check-user",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5f-YS+bAKBy4Q7o5C28dCQV0sjd9BY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 08:55:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successfully checked user\",\n    \"data\": {\n        \"email\": true,\n        \"username\": false,\n        \"userExist\": true\n    }\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/check-user",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-user"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "128"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"80-RpFWy0Sjz2YQjMkJRTu8v7wuges\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 08:57:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"email or username is required\",\n    \"timestamp\": \"2023-08-23T08:57:08.696Z\",\n    \"path\": \"/api/V1/auth/check-user\"\n}"
+						}
+					]
+				},
+				{
+					"name": "My Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/me",
+							"host": [
+								"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "my profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/auth/me",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "475"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1db-fE123gCLGScE65BL/GMASxVAdsA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 23 Aug 2023 08:05:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User Profile fetched successfully\",\n    \"data\": {\n        \"id\": \"0bcf06ff-29ba-4b52-8ebf-b169bc6448dd\",\n        \"createdAt\": \"2023-08-23T06:33:15.122Z\",\n        \"updatedAt\": \"2023-08-23T08:05:52.230Z\",\n        \"email\": \"user.seed@test.com\",\n        \"username\": \"user\",\n        \"firstName\": \"user\",\n        \"lastName\": \"test\",\n        \"roles\": [\n            \"USER\"\n        ],\n        \"country\": null,\n        \"postcode\": null,\n        \"dob\": null,\n        \"ageRange\": null,\n        \"gender\": null,\n        \"isActive\": true,\n        \"signUpDate\": \"2023-08-23T06:33:15.122Z\",\n        \"profileImage\": null,\n        \"lastLoggedIn\": \"2023-08-23T07:58:50.599Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{AccessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "wallet",
+					"item": [
+						{
+							"name": "List wallets",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{AccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet?skip=1&limit=100&relations=transactions",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"wallet"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "relations",
+											"value": "transactions"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List wallets",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet?skip=1&limit=100&relations=transactions",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"wallet"
+											],
+											"query": [
+												{
+													"key": "skip",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "100"
+												},
+												{
+													"key": "relations",
+													"value": "transactions"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "500"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f4-ULDVMzYuGFo+VU0EILthQyiBcm4\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:06:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"wallets list\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                \"name\": \"kigali wallet 2\",\n                \"currency\": \"RWF\",\n                \"pendingBalance\": 0,\n                \"availableBalance\": 52,\n                \"floatBalance\": 0,\n                \"ledgerBalance\": 0,\n                \"status\": \"ACTIVE\",\n                \"isDeleted\": false,\n                \"transactions\": [\n                    {\n                        \"id\": \"a76e1837-6a67-4ce9-8917-8aa63e975ba7\",\n                        \"createdAt\": \"2023-10-25T20:08:45.430Z\",\n                        \"updatedAt\": \"2023-10-25T20:08:45.430Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 12,\n                        \"walletStateBefore\": 0,\n                        \"reference\": \"5D1FoVFdJN\",\n                        \"transactionDate\": \"2023-10-25T22:08:45.429Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"893a6c13-ac5a-4083-bbfd-6071117861d1\",\n                        \"createdAt\": \"2023-10-25T20:09:11.359Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:11.359Z\",\n                        \"action\": \"DEBIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 0,\n                        \"walletStateBefore\": 12,\n                        \"reference\": \"nUqivYHcDE\",\n                        \"transactionDate\": \"2023-10-25T22:09:11.358Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"8d78c7fc-38a3-4223-8a34-a5583ac30a73\",\n                        \"createdAt\": \"2023-10-25T20:09:36.735Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:36.735Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 12,\n                        \"walletStateBefore\": 0,\n                        \"reference\": \"w20gxFlhiF\",\n                        \"transactionDate\": \"2023-10-25T22:09:36.735Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"0ed16c79-f783-42e0-b128-4b695474de46\",\n                        \"createdAt\": \"2023-10-25T20:09:44.004Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:44.004Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 40,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 52,\n                        \"walletStateBefore\": 12,\n                        \"reference\": \"c2Ap51Ftoa\",\n                        \"transactionDate\": \"2023-10-25T22:09:44.003Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    }\n                ]\n            },\n            {\n                \"id\": \"9b7f03f6-8f5e-4e3c-bb80-12adfda5659b\",\n                \"createdAt\": \"2023-10-25T20:05:47.288Z\",\n                \"name\": \"kigali wallet\",\n                \"currency\": \"RWF\",\n                \"pendingBalance\": 0,\n                \"availableBalance\": 0,\n                \"floatBalance\": 0,\n                \"ledgerBalance\": 0,\n                \"status\": \"ACTIVE\",\n                \"isDeleted\": false,\n                \"transactions\": []\n            }\n        ],\n        \"metadata\": {\n            \"page\": 1,\n            \"perPage\": 100,\n            \"total\": 2,\n            \"pageCount\": 2\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create Wallet",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{AccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Kigali wallet 2\",\r\n    \"currency\": \"RWF\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"wallet"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"wallet"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "181"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b5-drG/jIctOm4m0eYU5AX1UrOVEpc\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:03:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 400,\n    \"message\": [\n        \"name must be a string\",\n        \"currency must be one of the following values: USD, EUR, USDT, RWF\"\n    ],\n    \"timestamp\": \"2023-10-25T22:03:46.648Z\",\n    \"path\": \"/api/v1/wallet\"\n}"
+								},
+								{
+									"name": "successfull",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Kigali wallet\",\r\n    \"currency\": \"RWF\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"wallet"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "371"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"173-KoOHV92uGAwFOvEItVObAI59rzY\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:05:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully wallet created\",\n    \"data\": {\n        \"name\": \"kigali wallet\",\n        \"currency\": \"RWF\",\n        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n        \"id\": \"9b7f03f6-8f5e-4e3c-bb80-12adfda5659b\",\n        \"createdAt\": \"2023-10-25T20:05:47.288Z\",\n        \"updatedAt\": \"2023-10-25T20:05:47.288Z\",\n        \"pendingBalance\": 0,\n        \"availableBalance\": 0,\n        \"floatBalance\": 0,\n        \"ledgerBalance\": 0,\n        \"status\": \"ACTIVE\",\n        \"isDeleted\": false\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "transactions",
+					"item": [
+						{
+							"name": "List transactions",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{AccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet/transactions?skip=1&limit=100&relations=wallet",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"wallet",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "relations",
+											"value": "wallet"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List transactions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet/transactions?skip=1&limit=100&relations=wallet",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"wallet",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "skip",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "100"
+												},
+												{
+													"key": "relations",
+													"value": "wallet"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1073"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"431-sGI9tBH2oqUOz/fIeCrFeCAdXx8\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:09:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"transactions list\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"0ed16c79-f783-42e0-b128-4b695474de46\",\n                \"createdAt\": \"2023-10-25T20:09:44.004Z\",\n                \"action\": \"CREDIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 40,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 52,\n                \"walletStateBefore\": 12,\n                \"reference\": \"c2Ap51Ftoa\",\n                \"transactionDate\": \"2023-10-25T22:09:44.003Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                }\n            },\n            {\n                \"id\": \"8d78c7fc-38a3-4223-8a34-a5583ac30a73\",\n                \"createdAt\": \"2023-10-25T20:09:36.735Z\",\n                \"action\": \"CREDIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 12,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 12,\n                \"walletStateBefore\": 0,\n                \"reference\": \"w20gxFlhiF\",\n                \"transactionDate\": \"2023-10-25T22:09:36.735Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                }\n            },\n            {\n                \"id\": \"893a6c13-ac5a-4083-bbfd-6071117861d1\",\n                \"createdAt\": \"2023-10-25T20:09:11.359Z\",\n                \"action\": \"DEBIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 12,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 0,\n                \"walletStateBefore\": 12,\n                \"reference\": \"nUqivYHcDE\",\n                \"transactionDate\": \"2023-10-25T22:09:11.358Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                }\n            },\n            {\n                \"id\": \"a76e1837-6a67-4ce9-8917-8aa63e975ba7\",\n                \"createdAt\": \"2023-10-25T20:08:45.430Z\",\n                \"action\": \"CREDIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 12,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 12,\n                \"walletStateBefore\": 0,\n                \"reference\": \"5D1FoVFdJN\",\n                \"transactionDate\": \"2023-10-25T22:08:45.429Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                }\n            }\n        ],\n        \"metadata\": {\n            \"page\": 1,\n            \"perPage\": 100,\n            \"total\": 4,\n            \"pageCount\": 4\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create transaction",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{AccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"action\": \"CREDIT\",\r\n    \"amount\":40,\r\n    \"walletId\":\"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\r\n    \"description\": \"Just debiting\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet/transactions",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"wallet",
+										"transactions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet/transactions",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"wallet",
+												"transactions"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "316"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"13c-Knv284Zp/+g2H6JZxyDsB9paF8s\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:03:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 400,\n    \"message\": [\n        \"action must be one of the following values: DEBIT, CREDIT\",\n        \"amount must be a number conforming to the specified constraints\",\n        \"description must be a string\",\n        \"walletId should not be empty\",\n        \"walletId must be a UUID\"\n    ],\n    \"timestamp\": \"2023-10-25T22:03:59.203Z\",\n    \"path\": \"/api/v1/wallet/transactions\"\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"action\": \"CREDIT\",\r\n    \"amount\":12,\r\n    \"walletId\":\"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\r\n    \"description\": \"Just debiting\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet/transactions",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"wallet",
+												"transactions"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "470"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1d6-GivfgjJe3Nc9hj0u8fBDkYZiE+A\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:08:45 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully transaction created\",\n    \"data\": {\n        \"action\": \"CREDIT\",\n        \"amount\": 12,\n        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n        \"description\": \"Just debiting\",\n        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n        \"status\": \"COMPLETED\",\n        \"walletStateBefore\": 0,\n        \"walletStateAfter\": 12,\n        \"reference\": \"5D1FoVFdJN\",\n        \"transactionDate\": \"2023-10-25T22:08:45.429Z\",\n        \"id\": \"a76e1837-6a67-4ce9-8917-8aa63e975ba7\",\n        \"createdAt\": \"2023-10-25T20:08:45.430Z\",\n        \"updatedAt\": \"2023-10-25T20:08:45.430Z\"\n    }\n}"
+								},
+								{
+									"name": "Debiting",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"action\": \"DEBIT\",\r\n    \"amount\":12,\r\n    \"walletId\":\"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\r\n    \"description\": \"Just debiting\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/wallet/transactions",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"wallet",
+												"transactions"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "469"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1d5-baGpvvXEa9qmorKcqnbHKt+70bE\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:09:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully transaction created\",\n    \"data\": {\n        \"action\": \"DEBIT\",\n        \"amount\": 12,\n        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n        \"description\": \"Just debiting\",\n        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n        \"status\": \"COMPLETED\",\n        \"walletStateBefore\": 12,\n        \"walletStateAfter\": 0,\n        \"reference\": \"nUqivYHcDE\",\n        \"transactionDate\": \"2023-10-25T22:09:11.358Z\",\n        \"id\": \"893a6c13-ac5a-4083-bbfd-6071117861d1\",\n        \"createdAt\": \"2023-10-25T20:09:11.359Z\",\n        \"updatedAt\": \"2023-10-25T20:09:11.359Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{AccessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "list users",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{AccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/admin/users?page=1&limit=10&relations=wallet,transactions",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "relations",
+											"value": "wallet,transactions"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "list users",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/admin/wallet/transactions?skip=1&limit=100&relations=wallet,user",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"admin",
+												"wallet",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "salviosage@test.com",
+													"disabled": true
+												},
+												{
+													"key": "username",
+													"value": "super-admin",
+													"disabled": true
+												},
+												{
+													"key": "skip",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "100"
+												},
+												{
+													"key": "relations",
+													"value": "wallet,user"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "632"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"278-hx64H8SLpO9Js6CCYUCJdkUFns8\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 23 Aug 2023 21:29:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"users list\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"e250026e-c625-4a92-9dd0-f12876b42e3a\",\n                \"createdAt\": \"2023-10-25T18:55:30.581Z\",\n                \"updatedAt\": \"2023-10-25T20:17:22.507Z\",\n                \"email\": \"user.seed@tew.com\",\n                \"firstName\": \"user\",\n                \"lastName\": \"test\",\n                \"roles\": [\n                    \"USER\"\n                ],\n                \"country\": null,\n                \"gender\": null,\n                \"isActive\": true,\n                \"lastLoggedIn\": \"2023-10-25T18:55:30.581Z\",\n                \"transactions\": []\n            },\n            {\n                \"id\": \"6939f065-4326-45fc-a9d3-b179e317d6c0\",\n                \"createdAt\": \"2023-10-25T18:55:30.581Z\",\n                \"updatedAt\": \"2023-10-25T20:17:22.508Z\",\n                \"email\": \"admin.seed@tew.com\",\n                \"firstName\": \"admin\",\n                \"lastName\": \"test\",\n                \"roles\": [\n                    \"ADMIN\"\n                ],\n                \"country\": null,\n                \"gender\": null,\n                \"isActive\": true,\n                \"lastLoggedIn\": \"2023-10-25T18:55:30.581Z\",\n                \"transactions\": []\n            },\n            {\n                \"id\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                \"createdAt\": \"2023-10-25T18:55:30.571Z\",\n                \"updatedAt\": \"2023-10-25T20:17:22.500Z\",\n                \"email\": \"super.seed@tew.com\",\n                \"firstName\": \"Admin\",\n                \"lastName\": \"User\",\n                \"roles\": [\n                    \"SUPER_ADMIN\"\n                ],\n                \"country\": null,\n                \"gender\": null,\n                \"isActive\": true,\n                \"lastLoggedIn\": \"2023-10-25T21:52:42.026Z\",\n                \"transactions\": [\n                    {\n                        \"id\": \"a76e1837-6a67-4ce9-8917-8aa63e975ba7\",\n                        \"createdAt\": \"2023-10-25T20:08:45.430Z\",\n                        \"updatedAt\": \"2023-10-25T20:08:45.430Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 12,\n                        \"walletStateBefore\": 0,\n                        \"reference\": \"5D1FoVFdJN\",\n                        \"transactionDate\": \"2023-10-25T22:08:45.429Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"893a6c13-ac5a-4083-bbfd-6071117861d1\",\n                        \"createdAt\": \"2023-10-25T20:09:11.359Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:11.359Z\",\n                        \"action\": \"DEBIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 0,\n                        \"walletStateBefore\": 12,\n                        \"reference\": \"nUqivYHcDE\",\n                        \"transactionDate\": \"2023-10-25T22:09:11.358Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"8d78c7fc-38a3-4223-8a34-a5583ac30a73\",\n                        \"createdAt\": \"2023-10-25T20:09:36.735Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:36.735Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 12,\n                        \"walletStateBefore\": 0,\n                        \"reference\": \"w20gxFlhiF\",\n                        \"transactionDate\": \"2023-10-25T22:09:36.735Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"0ed16c79-f783-42e0-b128-4b695474de46\",\n                        \"createdAt\": \"2023-10-25T20:09:44.004Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:44.004Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 40,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 52,\n                        \"walletStateBefore\": 12,\n                        \"reference\": \"c2Ap51Ftoa\",\n                        \"transactionDate\": \"2023-10-25T22:09:44.003Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    }\n                ]\n            }\n        ],\n        \"metadata\": {\n            \"page\": 1,\n            \"perPage\": 10,\n            \"total\": 3,\n            \"pageCount\": 3\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "transactions",
+					"item": [
+						{
+							"name": "List transactions",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{AccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/admin/wallet/transactions?skip=1&limit=100&relations=wallet,user",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"admin",
+										"wallet",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "relations",
+											"value": "wallet,user"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List transactions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/admin/wallet/transactions?skip=1&limit=100&relations=wallet,user",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"admin",
+												"wallet",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "skip",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "100"
+												},
+												{
+													"key": "relations",
+													"value": "wallet,user"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1073"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"431-sGI9tBH2oqUOz/fIeCrFeCAdXx8\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:09:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"transactions list\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"0ed16c79-f783-42e0-b128-4b695474de46\",\n                \"createdAt\": \"2023-10-25T20:09:44.004Z\",\n                \"action\": \"CREDIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 40,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 52,\n                \"walletStateBefore\": 12,\n                \"reference\": \"c2Ap51Ftoa\",\n                \"transactionDate\": \"2023-10-25T22:09:44.003Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                },\n                \"user\": {\n                    \"id\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                    \"createdAt\": \"2023-10-25T18:55:30.571Z\",\n                    \"updatedAt\": \"2023-10-25T20:17:22.500Z\",\n                    \"email\": \"super.seed@tew.com\",\n                    \"firstName\": \"Admin\",\n                    \"lastName\": \"User\",\n                    \"roles\": [\n                        \"SUPER_ADMIN\"\n                    ],\n                    \"country\": null,\n                    \"dob\": null,\n                    \"gender\": null,\n                    \"password\": \"$2a$10$2uCwXruGhuJx3qmxsVne7u912izxVJpfQeTe5wjh0y3fr/fjo1sTC\",\n                    \"isActive\": true,\n                    \"signUpDate\": \"2023-10-25T18:55:30.571Z\",\n                    \"lastLoggedIn\": \"2023-10-25T21:52:42.026Z\",\n                    \"isDeleted\": false\n                }\n            },\n            {\n                \"id\": \"8d78c7fc-38a3-4223-8a34-a5583ac30a73\",\n                \"createdAt\": \"2023-10-25T20:09:36.735Z\",\n                \"action\": \"CREDIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 12,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 12,\n                \"walletStateBefore\": 0,\n                \"reference\": \"w20gxFlhiF\",\n                \"transactionDate\": \"2023-10-25T22:09:36.735Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                },\n                \"user\": {\n                    \"id\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                    \"createdAt\": \"2023-10-25T18:55:30.571Z\",\n                    \"updatedAt\": \"2023-10-25T20:17:22.500Z\",\n                    \"email\": \"super.seed@tew.com\",\n                    \"firstName\": \"Admin\",\n                    \"lastName\": \"User\",\n                    \"roles\": [\n                        \"SUPER_ADMIN\"\n                    ],\n                    \"country\": null,\n                    \"dob\": null,\n                    \"gender\": null,\n                    \"password\": \"$2a$10$2uCwXruGhuJx3qmxsVne7u912izxVJpfQeTe5wjh0y3fr/fjo1sTC\",\n                    \"isActive\": true,\n                    \"signUpDate\": \"2023-10-25T18:55:30.571Z\",\n                    \"lastLoggedIn\": \"2023-10-25T21:52:42.026Z\",\n                    \"isDeleted\": false\n                }\n            },\n            {\n                \"id\": \"893a6c13-ac5a-4083-bbfd-6071117861d1\",\n                \"createdAt\": \"2023-10-25T20:09:11.359Z\",\n                \"action\": \"DEBIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 12,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 0,\n                \"walletStateBefore\": 12,\n                \"reference\": \"nUqivYHcDE\",\n                \"transactionDate\": \"2023-10-25T22:09:11.358Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                },\n                \"user\": {\n                    \"id\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                    \"createdAt\": \"2023-10-25T18:55:30.571Z\",\n                    \"updatedAt\": \"2023-10-25T20:17:22.500Z\",\n                    \"email\": \"super.seed@tew.com\",\n                    \"firstName\": \"Admin\",\n                    \"lastName\": \"User\",\n                    \"roles\": [\n                        \"SUPER_ADMIN\"\n                    ],\n                    \"country\": null,\n                    \"dob\": null,\n                    \"gender\": null,\n                    \"password\": \"$2a$10$2uCwXruGhuJx3qmxsVne7u912izxVJpfQeTe5wjh0y3fr/fjo1sTC\",\n                    \"isActive\": true,\n                    \"signUpDate\": \"2023-10-25T18:55:30.571Z\",\n                    \"lastLoggedIn\": \"2023-10-25T21:52:42.026Z\",\n                    \"isDeleted\": false\n                }\n            },\n            {\n                \"id\": \"a76e1837-6a67-4ce9-8917-8aa63e975ba7\",\n                \"createdAt\": \"2023-10-25T20:08:45.430Z\",\n                \"action\": \"CREDIT\",\n                \"status\": \"COMPLETED\",\n                \"amount\": 12,\n                \"description\": \"Just debiting\",\n                \"walletStateAfter\": 12,\n                \"walletStateBefore\": 0,\n                \"reference\": \"5D1FoVFdJN\",\n                \"transactionDate\": \"2023-10-25T22:08:45.429Z\",\n                \"wallet\": {\n                    \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                    \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                    \"updatedAt\": \"2023-10-25T20:09:44.015Z\",\n                    \"name\": \"kigali wallet 2\",\n                    \"currency\": \"RWF\",\n                    \"pendingBalance\": 0,\n                    \"availableBalance\": 52,\n                    \"floatBalance\": 0,\n                    \"ledgerBalance\": 0,\n                    \"status\": \"ACTIVE\",\n                    \"isDeleted\": false,\n                    \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\"\n                },\n                \"user\": {\n                    \"id\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                    \"createdAt\": \"2023-10-25T18:55:30.571Z\",\n                    \"updatedAt\": \"2023-10-25T20:17:22.500Z\",\n                    \"email\": \"super.seed@tew.com\",\n                    \"firstName\": \"Admin\",\n                    \"lastName\": \"User\",\n                    \"roles\": [\n                        \"SUPER_ADMIN\"\n                    ],\n                    \"country\": null,\n                    \"dob\": null,\n                    \"gender\": null,\n                    \"password\": \"$2a$10$2uCwXruGhuJx3qmxsVne7u912izxVJpfQeTe5wjh0y3fr/fjo1sTC\",\n                    \"isActive\": true,\n                    \"signUpDate\": \"2023-10-25T18:55:30.571Z\",\n                    \"lastLoggedIn\": \"2023-10-25T21:52:42.026Z\",\n                    \"isDeleted\": false\n                }\n            }\n        ],\n        \"metadata\": {\n            \"page\": 1,\n            \"perPage\": 100,\n            \"total\": 4,\n            \"pageCount\": 4\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "wallet",
+					"item": [
+						{
+							"name": "List wallets",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{AccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/admin/wallet?skip=1&limit=100&relations=transactions,user",
+									"host": [
+										"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+									],
+									"path": [
+										"admin",
+										"wallet"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "relations",
+											"value": "transactions,user"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List wallets",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}/admin/wallet?skip=1&limit=100&relations=transactions,user",
+											"host": [
+												"{{BaseUrl}}{{PrefixUrl}}{{VersionUrl}}"
+											],
+											"path": [
+												"admin",
+												"wallet"
+											],
+											"query": [
+												{
+													"key": "skip",
+													"value": "1"
+												},
+												{
+													"key": "limit",
+													"value": "100"
+												},
+												{
+													"key": "relations",
+													"value": "transactions,user"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "500"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f4-ULDVMzYuGFo+VU0EILthQyiBcm4\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 25 Oct 2023 22:06:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"wallets list\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\",\n                \"createdAt\": \"2023-10-25T20:06:22.628Z\",\n                \"name\": \"kigali wallet 2\",\n                \"currency\": \"RWF\",\n                \"pendingBalance\": 0,\n                \"availableBalance\": 52,\n                \"floatBalance\": 0,\n                \"ledgerBalance\": 0,\n                \"status\": \"ACTIVE\",\n                \"isDeleted\": false,\n                \"transactions\": [\n                    {\n                        \"id\": \"a76e1837-6a67-4ce9-8917-8aa63e975ba7\",\n                        \"createdAt\": \"2023-10-25T20:08:45.430Z\",\n                        \"updatedAt\": \"2023-10-25T20:08:45.430Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 12,\n                        \"walletStateBefore\": 0,\n                        \"reference\": \"5D1FoVFdJN\",\n                        \"transactionDate\": \"2023-10-25T22:08:45.429Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"893a6c13-ac5a-4083-bbfd-6071117861d1\",\n                        \"createdAt\": \"2023-10-25T20:09:11.359Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:11.359Z\",\n                        \"action\": \"DEBIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 0,\n                        \"walletStateBefore\": 12,\n                        \"reference\": \"nUqivYHcDE\",\n                        \"transactionDate\": \"2023-10-25T22:09:11.358Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"8d78c7fc-38a3-4223-8a34-a5583ac30a73\",\n                        \"createdAt\": \"2023-10-25T20:09:36.735Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:36.735Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 12,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 12,\n                        \"walletStateBefore\": 0,\n                        \"reference\": \"w20gxFlhiF\",\n                        \"transactionDate\": \"2023-10-25T22:09:36.735Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    },\n                    {\n                        \"id\": \"0ed16c79-f783-42e0-b128-4b695474de46\",\n                        \"createdAt\": \"2023-10-25T20:09:44.004Z\",\n                        \"updatedAt\": \"2023-10-25T20:09:44.004Z\",\n                        \"action\": \"CREDIT\",\n                        \"status\": \"COMPLETED\",\n                        \"amount\": 40,\n                        \"description\": \"Just debiting\",\n                        \"walletStateAfter\": 52,\n                        \"walletStateBefore\": 12,\n                        \"reference\": \"c2Ap51Ftoa\",\n                        \"transactionDate\": \"2023-10-25T22:09:44.003Z\",\n                        \"userId\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                        \"walletId\": \"e640acc9-6dc0-4d93-a4ed-49c40bf5e500\"\n                    }\n                ],\n                \"user\": {\n                    \"id\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                    \"createdAt\": \"2023-10-25T18:55:30.571Z\",\n                    \"updatedAt\": \"2023-10-25T20:17:22.500Z\",\n                    \"email\": \"super.seed@tew.com\",\n                    \"firstName\": \"Admin\",\n                    \"lastName\": \"User\",\n                    \"roles\": [\n                        \"SUPER_ADMIN\"\n                    ],\n                    \"country\": null,\n                    \"dob\": null,\n                    \"gender\": null,\n                    \"password\": \"$2a$10$2uCwXruGhuJx3qmxsVne7u912izxVJpfQeTe5wjh0y3fr/fjo1sTC\",\n                    \"isActive\": true,\n                    \"signUpDate\": \"2023-10-25T18:55:30.571Z\",\n                    \"lastLoggedIn\": \"2023-10-25T21:52:42.026Z\",\n                    \"isDeleted\": false\n                }\n            },\n            {\n                \"id\": \"9b7f03f6-8f5e-4e3c-bb80-12adfda5659b\",\n                \"createdAt\": \"2023-10-25T20:05:47.288Z\",\n                \"name\": \"kigali wallet\",\n                \"currency\": \"RWF\",\n                \"pendingBalance\": 0,\n                \"availableBalance\": 0,\n                \"floatBalance\": 0,\n                \"ledgerBalance\": 0,\n                \"status\": \"ACTIVE\",\n                \"isDeleted\": false,\n                \"transactions\": [],\n                \"user\": {\n                    \"id\": \"685dc52b-c39f-4b91-8bed-ab6cb2438213\",\n                    \"createdAt\": \"2023-10-25T18:55:30.571Z\",\n                    \"updatedAt\": \"2023-10-25T20:17:22.500Z\",\n                    \"email\": \"super.seed@tew.com\",\n                    \"firstName\": \"Admin\",\n                    \"lastName\": \"User\",\n                    \"roles\": [\n                        \"SUPER_ADMIN\"\n                    ],\n                    \"country\": null,\n                    \"dob\": null,\n                    \"gender\": null,\n                    \"password\": \"$2a$10$2uCwXruGhuJx3qmxsVne7u912izxVJpfQeTe5wjh0y3fr/fjo1sTC\",\n                    \"isActive\": true,\n                    \"signUpDate\": \"2023-10-25T18:55:30.571Z\",\n                    \"lastLoggedIn\": \"2023-10-25T21:52:42.026Z\",\n                    \"isDeleted\": false\n                }\n            }\n        ],\n        \"metadata\": {\n            \"page\": 1,\n            \"perPage\": 100,\n            \"total\": 2,\n            \"pageCount\": 2\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{AccessToken}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "AccessToken",
+			"value": ""
+		}
+	]
+}
